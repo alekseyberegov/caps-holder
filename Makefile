@@ -11,7 +11,7 @@ build:
 	docker build -t aberegov/capsholder:latest .
 
 run:
-	docker run -p 8080:9000 -d aberegov/capsholder
+	docker run -d -v ~/data:/data aberegov/capsholder
 
 shell:
 	docker run -ti aberegov/capsholder /bin/bash

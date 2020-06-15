@@ -6,4 +6,4 @@ WORKDIR /app
 
 RUN pip install -r requirements.txt
 
-CMD ["python", "-m", "caps-holder", "run"]
+CMD ["scrapy", "runspider", "caps-holder/capsholder/spiders/CapsHolderScraper.py ", "-a", "config=nypos", "-s", "SQLITE3_DIR=/data"]
