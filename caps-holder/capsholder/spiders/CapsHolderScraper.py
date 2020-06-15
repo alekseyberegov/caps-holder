@@ -17,7 +17,7 @@ class CapsHolderScraper(scrapy.Spider):
         for elem_set in response.css(self.config.element_set):
             next_page = elem_set.css(link_extractor).extract_first()
             yield {
-                'name': next_page,
+                'url': next_page,
             }
 
             if self.config.follow_links and next_page:
