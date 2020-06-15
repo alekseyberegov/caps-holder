@@ -1,0 +1,6 @@
+{
+  "start_urls": ["http://nypost.com"],
+  "element_set": "div.headline-container",
+  "link_extractor": "a ::attr(href)",
+  "follow_links": true
+}
