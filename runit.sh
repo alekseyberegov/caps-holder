@@ -6,12 +6,17 @@ PYTHONPATH=$DIR/caps-holder
 
 usage ()
 {
-    echo ""
-    echo "Running CAPS spider"
-    echo "Usage: $0 [-c|--config <config>] [-d|--debug] [-e|--endpoint] [-h|--help]"
-    echo ""
+    printf -- "\n"
+    printf -- "Usage: $0 [OPTIONS]\n\n"
+    printf -- "Running CAPS spider\n\n"
+    printf -- "Options:\n"
+    printf -- "  -c, --config string             use a given config for scraping\n"
+    printf -- "  -e, --endpoint string           specify CATS endpoint\n"
+    printf -- "  -d, --debug                     enable debug mode\n"
+    printf -- "\n"
     exit 1
 }
+
 
 # default values
 config="nypost"
