@@ -20,7 +20,7 @@ class SQLitePipeline:
         self.con = sqlite3.connect(Path(self.sqlite3_db_dir) / db_file)
         self.stmt = self.con.cursor()
         self.stmt.execute("""
-            create table caps_holder(ts timestamp, url text)
+            create table caps_holder(ts timestamp, url text, page_title text, page_desc text)
             """)
 
     def close_spider(self, spider):
@@ -28,7 +28,7 @@ class SQLitePipeline:
         self.con.close()
 
     def process_item(self, item, spider):
-        self.stmt.execute("insert into caps_holder(ts, url) values (?, ?)"
-                          , (datetime.now(), item['url']))
+        self.stmt.execute("insert into caps_holder(ts, url, page_title, page_desc) values (?, ?, ?, ?)"
+                , (datetime.now(), item['url'], item['page_title'], item['page_desc']))
         self.con.commit()
         return item

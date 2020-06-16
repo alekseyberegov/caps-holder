@@ -2,5 +2,7 @@
   "start_urls": ["http://nypost.com"],
   "element_set": "div.headline-container",
   "link_extractor": "a ::attr(href)",
-  "follow_links": false
+  "follow_links": true,
+  "page_title": "//meta[@property='og:title']/@content",
+  "page_desc": "//meta[@property='og:description']/@content"
 }
