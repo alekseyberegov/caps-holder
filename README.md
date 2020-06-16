@@ -10,7 +10,7 @@
     ```shell script
     ./tunnel_cats.sh -u <your_name>@dev.clicktripz.com
     ```
-3. From another terminal window run crawler/scarper/CATS invoker
+3. From another terminal window run CATS interrogator
     ```shell script
     ./runit.sh
     ```
