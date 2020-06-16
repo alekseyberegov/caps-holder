@@ -25,7 +25,7 @@ Usage:
 Run CAPS spider/scraper/CATS interrogator
 
 Options:
-  -c, --config string       use a given config for scraping
+  -c, --config string       specify config for scraping
   -e, --endpoint string     specify CATS endpoint
   -l, --loglevel string     set log level (default: DEBUG)
   -d, --debug               set debug mode for CATS

@@ -19,7 +19,7 @@ usage ()
     printf -- "  $0 [OPTIONS]\n\n"
     printf -- "Run CAPS spider/scraper/CATS interrogator\n\n"
     printf -- "Options:\n"
-    printf -- "  -c, --config string       use a given config for scraping\n"
+    printf -- "  -c, --config string       specify config for scraping\n"
     printf -- "  -e, --endpoint string     specify CATS endpoint\n"
     printf -- "  -l, --loglevel string     set log level (default: DEBUG)\n"
     printf -- "  -d, --debug               set debug mode for CATS\n"
