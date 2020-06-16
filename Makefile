@@ -7,14 +7,15 @@ test:
 freeze:
 	pip freeze > requirements.txt
 
-build:
+docker_build:
 	docker build -t aberegov/capsholder:latest .
 
-run:
+docker_run:
 	mkdir -p ~/databases
 	docker run -d -v ~/databases:/data aberegov/capsholder
 
-shell:
+docker_sh:
 	docker run -ti aberegov/capsholder /bin/bash
 
-.PHONY: init test freeze build run shell
+.PHONY: init test freeze docker_build docker_run docker_sh
+

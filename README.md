@@ -2,18 +2,22 @@
 *Keeping CAPS in the right place*
 
 ### Quick start
-Start a tunnel to CATS service
-```shell script
-./tunnel_cats.sh -u <your_name>@dev.clicktripz.com
-```
-From another terminal window run crawler/scarper/CATS invoker
-```shell script
-./runit.sh
-```
-Use SQL to analyze data
-```
-./caps_stats.sh 
-```
+1. Install dependencies
+    ```shell script
+    make init
+    ```
+2. Start a tunnel to CATS service
+    ```shell script
+    ./tunnel_cats.sh -u <your_name>@dev.clicktripz.com
+    ```
+3. From another terminal window run crawler/scarper/CATS invoker
+    ```shell script
+    ./runit.sh
+    ```
+4. Use SQL to analyze data
+    ```
+    ./caps_stats.sh 
+    ```
 ### Using `runit.sh`
 ```shell script
 
