@@ -17,5 +17,7 @@
   "link_extractor": "a ::attr(href)",
   "follow_links": true,
   "page_title": "//meta[@property='og:title']/@content",
-  "page_desc": "//meta[@property='og:description']/@content"
+  "page_desc": "//meta[@property='og:description']/@content",
+  "modified_time": "//meta[@property='article:modified_time']/@content",
+  "published_time": "//meta[@property='article:published_time']/@content"
 }

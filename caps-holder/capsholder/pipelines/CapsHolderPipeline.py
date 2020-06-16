@@ -8,6 +8,23 @@ from capsholder.stubs.cats.Stub import Stub
 
 
 class SQLitePipeline:
+    create_table_sql = """
+        create table caps_holder(
+                ts          timestamp
+            ,   published   text
+            ,   modified    text
+            ,   url         text
+            ,   title       text
+            ,   desc        text
+            ,   search      text
+            ,   cats        text)
+    """
+
+    insert_row_sql = """
+        insert into caps_holder(ts, published, modified, url, title, desc, search, cats) 
+        values (?, ?, ?, ?, ?, ?, ?, ?)
+    """
+
     def __init__(self, sqlite3_db_dir, cats_endpoint, cats_debug):
         self.sqlite3_db_dir = sqlite3_db_dir
         self.cats = Stub(cats_endpoint, cats_debug)
@@ -26,9 +43,7 @@ class SQLitePipeline:
         db_file = '_'.join(['caps_holder', datetime.now().strftime("%m_%d_%Y-%H_%M_%S"), '.db'])
         self.con = sqlite3.connect(Path(self.sqlite3_db_dir) / db_file)
         self.stmt = self.con.cursor()
-        self.stmt.execute("""
-            create table caps_holder(ts timestamp, url text, title text, desc text, search text, cats text)
-            """)
+        self.stmt.execute(self.create_table_sql)
 
     def close_spider(self, spider):
         self.stmt.close()
@@ -36,10 +51,16 @@ class SQLitePipeline:
 
     def process_item(self, item, spider):
         url = item['url']
+        page_title = item['page_title']
+        page_desc = item['page_desc']
+        published_time = item['published_time']
+        modified_time = item['modified_time']
+
         cats_resp = self.cats.send(url)
         search = self.extract_search(cats_resp)
-        self.stmt.execute("insert into caps_holder(ts, url, title, desc, search, cats) values (?, ?, ?, ?, ?, ?)",
-                (datetime.now(), url, item['page_title'], item['page_desc'], search, cats_resp))
+
+        self.stmt.execute(self.insert_row_sql,
+                          (datetime.now(), published_time, modified_time, url, page_title, page_desc, search, cats_resp))
         self.con.commit()
         return item
 
@@ -50,4 +71,3 @@ class SQLitePipeline:
             return data['search']['query']
         except JSONDecodeError:
             return None
-
