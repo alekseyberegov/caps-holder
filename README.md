@@ -1,4 +1,5 @@
 # CAPS HOLDER
+*Keeping CAPS in the right place*
 
 ### Quick start
 Start a tunnel to CATS service
@@ -9,10 +10,10 @@ From another terminal window run crawler/scarper/CATS invoker
 ```shell script
 ./runit.sh
 ```
-Use your SQL skills to analyze data
+Use SQL to analyze data
 ```
 sqlite3 ~/caps_holder_MM_DD_YYYY-HH_MI_SS_.db
-select * from caps_holder;
+select url, title, desc, search, cats from caps_holder;
 ```
 
 ### Getting more from `runit.sh`
