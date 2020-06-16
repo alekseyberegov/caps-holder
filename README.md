@@ -12,7 +12,7 @@ From another terminal window run crawler/scarper/CATS invoker
 ```
 Use SQL to analyze data
 ```
-./caps_stats.sh ~/caps_holder_MM_DD_YYYY-HH_MI_SS_.db
+./caps_stats.sh 
 ```
 ### Using `runit.sh`
 ```shell script
