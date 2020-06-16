@@ -11,7 +11,8 @@ build:
 	docker build -t aberegov/capsholder:latest .
 
 run:
-	docker run -d -v ~/data:/data aberegov/capsholder
+	mkdir -p ~/databases
+	docker run -d -v ~/databases:/data aberegov/capsholder
 
 shell:
 	docker run -ti aberegov/capsholder /bin/bash
