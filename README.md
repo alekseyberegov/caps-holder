@@ -16,7 +16,7 @@ sqlite3 ~/caps_holder_MM_DD_YYYY-HH_MI_SS_.db
 select url, title, desc, search, cats from caps_holder;
 ```
 
-### Getting more from `runit.sh`
+### Using `runit.sh`
 ```shell script
 
 Usage:
@@ -31,4 +31,20 @@ Options:
   -d, --debug               set debug mode for CATS
   -s, --settings            show default settings
   -h, --help                show help
+```
+
+### Using `tunnel_cats.sh`
+```shell script
+
+Usage:
+  tunnel_cats.sh [OPTIONS]
+
+Setup a SSH channel to CATS service
+
+Options:
+  -u, --user string       specify <user>@<host> to log in as on the remote machine
+  -s, --service hostname  the hostname of CATS service (default: prod-ds-cats.cubaneddie.k8s.clicktripz.io)
+  -p, --port number       the local port for the SSH tunnel (default: 8888)
+  -k, --key filename      specify a file from which the identity for public key authentication is read (default: /Users/clicktripz/.ssh/id_rsa)
+  -h, --help              show help
 ```
