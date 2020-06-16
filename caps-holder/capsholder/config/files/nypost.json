@@ -1,5 +1,6 @@
 {
   "start_urls": ["http://nypost.com"],
+  "allowed_domains": ["nypost.com", "www.mypost.com"],
   "element_set": "div.headline-container",
   "link_extractor": "a ::attr(href)",
   "follow_links": true,

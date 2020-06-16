@@ -11,6 +11,7 @@ class CapsHolderScraper(scrapy.Spider):
         if hasattr(self, 'config'):
             self.config = ConfigLoader.load(self.config)
             self.start_urls = self.config.start_urls
+            self.allowed_domains = self.config.allowed_domains
 
     def parse(self, response):
         page_title = response.xpath(self.config.page_title).extract_first()
