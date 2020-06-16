@@ -13,7 +13,11 @@ From another terminal window run crawler/scarper/CATS invoker
 Use SQL to analyze data
 ```
 sqlite3 ~/caps_holder_MM_DD_YYYY-HH_MI_SS_.db
-select url, title, desc, search, cats from caps_holder;
+.mode column
+.headers on
+.width 40 8
+select search, count(1) as cnt from caps_holder group by 1;
+.quit
 ```
 
 ### Using `runit.sh`
