@@ -7,7 +7,7 @@ from pathlib import Path
 class ConfigLoader(object):
     @classmethod
     def load(cls, name):
-        json_file = Path(os.path.dirname(__file__)) / 'files' / '.'.join([name, 'json'])
+        json_file = Path(os.path.dirname(__file__)) / 'sites' / '.'.join([name, 'json'])
         return json2obj(json_file)
 
 
