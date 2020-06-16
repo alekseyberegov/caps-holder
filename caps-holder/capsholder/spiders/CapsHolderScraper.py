@@ -25,13 +25,14 @@ class CapsHolderScraper(scrapy.Spider):
 
         if self.config.follow_links:
             link_extractor = self.config.link_extractor
-            for elem_set in response.css(self.config.element_set):
-                next_page = elem_set.css(link_extractor).extract_first()
+            for node_list_selector in self.config.node_list_selectors:
+                for sel in response.css(node_list_selector):
+                    next_page = sel.css(link_extractor).extract_first()
 
-                if next_page:
-                    yield scrapy.Request(
-                        response.urljoin(next_page),
-                        callback=self.parse
-                    )
+                    if next_page:
+                        yield scrapy.Request(
+                            response.urljoin(next_page),
+                            callback=self.parse
+                        )
 
 

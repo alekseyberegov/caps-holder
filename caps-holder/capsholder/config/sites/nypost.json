@@ -1,7 +1,19 @@
 {
-  "start_urls": ["http://nypost.com"],
-  "allowed_domains": ["nypost.com", "www.mypost.com"],
-  "element_set": "div.headline-container",
+  "start_urls": [
+      "http://nypost.com",
+      "https://nypost.com/sports/"
+    ],
+  "allowed_domains": [
+      "nypost.com",
+      "www.mypost.com"
+    ],
+  "node_list_selectors": [
+      "div.headline-container",
+      "div.circular-title",
+      "li.trending-story",
+      "article.oversize-headline",
+      "div.entry-header"
+    ],
   "link_extractor": "a ::attr(href)",
   "follow_links": true,
   "page_title": "//meta[@property='og:title']/@content",
