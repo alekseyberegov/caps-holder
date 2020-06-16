@@ -15,6 +15,7 @@ SPIDER_MODULES = ['capsholder.spiders']
 NEWSPIDER_MODULE = 'capsholder.spiders'
 
 CATS_ENDPOINT = 'https://localhost:8888/v1/cats'
+CATS_DEBUG = False
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'capsholder (+http://www.yourdomain.com)'
