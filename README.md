@@ -19,14 +19,16 @@ select url, title, desc, search, cats from caps_holder;
 ### Getting more from `runit.sh`
 ```shell script
 
-Usage: runit.sh [OPTIONS]
+Usage:
+  runit.sh [OPTIONS]
 
-Running CAPS spider
+Run CAPS spider/scraper/CATS interrogator
 
 Options:
   -c, --config string       use a given config for scraping
   -e, --endpoint string     specify CATS endpoint
-  -d, --debug               enable debug mode
+  -l, --loglevel string     set log level (default: DEBUG)
+  -d, --debug               set debug mode for CATS
   -s, --settings            show default settings
   -h, --help                show help
 ```

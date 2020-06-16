@@ -19,7 +19,7 @@ class SQLitePipeline:
         return cls(
             sqlite3_db_dir=crawler.settings.get('SQLITE3_DIR'),
             cats_endpoint=crawler.settings.get("CATS_ENDPOINT"),
-            cats_debug=crawler.settings.get("CATS_DEBUG", False)
+            cats_debug=crawler.settings.get("CATS_DEBUG")
         )
 
     def open_spider(self, spider):
