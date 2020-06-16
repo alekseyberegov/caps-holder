@@ -45,6 +45,6 @@ Options:
   -u, --user string       specify <user>@<host> to log in as on the remote machine
   -s, --service hostname  the hostname of CATS service (default: prod-ds-cats.cubaneddie.k8s.clicktripz.io)
   -p, --port number       the local port for the SSH tunnel (default: 8888)
-  -k, --key filename      specify a file from which the identity for public key authentication is read (default: /Users/clicktripz/.ssh/id_rsa)
+  -k, --key filename      specify a file from which the identity for public key authentication is read (default: ~/.ssh/id_rsa)
   -h, --help              show help
 ```
