@@ -14,3 +14,18 @@ Use your SQL skills to analyze data
 sqlite3 ~/caps_holder_MM_DD_YYYY-HH_MI_SS_.db
 select * from caps_holder;
 ```
+
+### Getting more from `runit.sh`
+```shell script
+
+Usage: runit.sh [OPTIONS]
+
+Running CAPS spider
+
+Options:
+  -c, --config string       use a given config for scraping
+  -e, --endpoint string     specify CATS endpoint
+  -d, --debug               enable debug mode
+  -s, --settings            show default settings
+  -h, --help                show help
+```
