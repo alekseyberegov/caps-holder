@@ -12,14 +12,8 @@ From another terminal window run crawler/scarper/CATS invoker
 ```
 Use SQL to analyze data
 ```
-sqlite3 ~/caps_holder_MM_DD_YYYY-HH_MI_SS_.db
-.mode column
-.headers on
-.width 40 8
-select search, count(1) as cnt from caps_holder group by 1;
-.quit
+./caps_stats.sh ~/caps_holder_MM_DD_YYYY-HH_MI_SS_.db
 ```
-
 ### Using `runit.sh`
 ```shell script
 
